@@ -299,4 +299,11 @@ footer{
         width: 100%;
         
     }
+    .window__content{
+        width: 95%;
+    }
+    .window__text p{
+       font-size: 14px;
+    }
+    
    }

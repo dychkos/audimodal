@@ -149,33 +149,26 @@ document.addEventListener('click', event => {
     }
 })
 
+const formSubmit = document.querySelector('#submitButton');
 
+formSubmit.addEventListener('click',()=>{
+    let content=`Отлично, мы свяжемся с вами!`;
+   let inputs = document.querySelectorAll('input');
+    for(inp of inputs){
+        if(inp.value==""){
+            content="Заполните все поля формы!";
 
-// let confirm = new confirmModal({
-//     modalTitle: "Подробная информация",
-//     modalText: "Desc",
-//     modalFooter: [,
-//         {
-//             text: "CANCEL",
-//             type: "danger",
-//             closable: true,
-//             handler() {
-//                 createModal.close()
-//                 console.log('Danger btn was clicked')
-//             }
-//         }
-//     ]
+        }
+    }
+    modalNotification({
+        modalTitle: "Уведоление",
+        modalText: content,
 
-// })
+    }).then(() => {
+        console.log("remove");
+        
+        // memberList = memberList.filter(f => f.id !== memberId)
+        // render()
+    })
+  })
 
-
-
-
-
-// let modalOpenBtns = document.querySelectorAll('[data-prod]');
-// for (let i = 0; i < modalOpenBtns.length; i++) {
-//     const btn = modalOpenBtns[i];
-//     btn.addEventListener('click', createModal(memberList[i]));
-//     //btn.onclick = createModal(memberList[i]);
-
-// };

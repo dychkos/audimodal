@@ -36,7 +36,7 @@ function _createModalButtons(buttons = []) {
 
 class Modal {
     $modal = null
-        //обрабатываем событие для всех data-close
+       
 
     constructor(options) {
         const modal = document.createElement('div');
@@ -48,7 +48,7 @@ class Modal {
         <div class="window__content ">
             <div class="window__header">
                 <h2>${options.modalTitle}</h2>
-                <span class="modal-close" data-close="true">&times;</span>
+                <span class="modal-close" data-close="true" >&times;</span>
             </div>
             <div class="window__text" data-content="true">
                 ${options.modalText}
@@ -60,12 +60,17 @@ class Modal {
         document.body.appendChild(modal);
         //реализация закрытия окна
         modal.addEventListener('click', (e) => {
+            console.log('click')
+
             if (e.target.dataset.close) {
-                modal.close();
+                this.close();
             }
         });
+        
         this.$modal = modal;
+        
     }
+    
 
     ANIM_SPEED = 200;
     closing = false;
